@@ -1,8 +1,3 @@
-[![Stories in Ready](https://badge.waffle.io/brandonking7/web-boilerplate.png?label=ready&title=Ready)](https://waffle.io/brandonking7/web-boilerplate)
-# web-boilerplate
-A template for new front-end projects.  
-[Waffle.io Board](https://waffle.io/brandonking7/web-boilerplate)
-
 ## Using
 1. Clone the repo
 ```
