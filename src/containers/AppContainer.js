@@ -1,19 +1,44 @@
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { setName } from '../actions/helloWorldActions';
+import { bindActionCreators } from 'redux';
+import * as zombieActionCreators from '../actions/zombieActions';
 import App from '../components/App';
+
+const propTypes = {
+  actions: PropTypes.shape({
+    zombie: PropTypes.shape({
+      getZombies: PropTypes.func.isRequired
+    }).isRequired
+  }).isRequired
+};
+
+class AppContainer extends Component {
+  componentDidMount() {
+    this.props.actions.zombie.getZombies();
+  }
+  render() {
+    return <App {...this.props} />;
+  }
+}
+
+AppContainer.propTypes = propTypes;
 
 function mapStateToProps(state) {
   return {
-    ...state.helloWorld
+    zombies: state.zombie.get('zombies')
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    onSubmit(name) {
-      dispatch(setName(name));
+    actions: {
+      zombie: bindActionCreators(zombieActionCreators, dispatch)
     }
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(AppContainer);

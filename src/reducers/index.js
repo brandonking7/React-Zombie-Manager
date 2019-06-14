@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import helloWorld from './helloWorldReducer';
+import zombie from './zombieReducer';
 
 export default combineReducers({
-  helloWorld
+  zombie
 });

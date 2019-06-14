@@ -1,22 +1,45 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import Greeting from './Greeting';
-import NameTaker from './NameTaker';
+import QuarantineZonesContainer from '../containers/QuarantineZonesContainer';
+import ZombieLocatorContainer from '../containers/ZombieLocatorContainer';
 
-const propTypes = {
-  name: PropTypes.string.isRequired,
-  onSubmit: PropTypes.func.isRequired
-};
-
-function App({ name, onSubmit }) {
+function App() {
   return (
-    <div>
-      <Greeting name={name} />
-      <NameTaker name={name} onSubmit={onSubmit} />
+    <div
+      style={{
+        display: 'flex',
+        height: '100%',
+        margin: 'auto',
+        padding: '16px',
+        width: '100%'
+      }}
+    >
+      <div
+        style={{
+          alignItems: 'center',
+          display: 'flex',
+          flexDirection: 'column',
+          margin: '0 auto',
+          width: '70%'
+        }}
+      >
+        <div
+          className="c-zombie--title"
+          style={{ textAlign: 'center', marginBottom: '16px', width: '100%' }}
+        >
+          Zombie Manager!
+        </div>
+        <QuarantineZonesContainer />
+      </div>
+      <div
+        style={{
+          margin: '0 auto',
+          width: '25%'
+        }}
+      >
+        <ZombieLocatorContainer />
+      </div>
     </div>
   );
 }
-
-App.propTypes = propTypes;
 
 export default App;

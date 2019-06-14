@@ -1,21 +1,13 @@
-var webpack = require('webpack');
-var config = require('./webpack.config.base');
+const webpack = require('webpack');
+const config = require('./webpack.config.base');
 
 config.devServer = {
   historyApiFallback: {
-    rewrites: [
-      { from: /^\/$/, to: 'index.html' }
-    ]
+    rewrites: [{ from: /^\/$/, to: 'index.html' }]
   },
   host: '0.0.0.0',
   hot: true,
-  inline: true,
-  proxy: {
-    '/api': {
-      changeOrigin: true,
-      target: 'http://localhost:3000'
-    }
-  }
+  inline: true
 };
 config.devtool = 'inline-source-map';
 
@@ -43,13 +35,15 @@ config.module.rules = config.module.rules.concat([
 ]);
 
 config.plugins.unshift(new webpack.HotModuleReplacementPlugin());
-config.plugins.unshift(new webpack.LoaderOptionsPlugin({
-  options: {
-    eslint: {
-      emitWarning: true,
-      formatter: require('eslint-friendly-formatter')
+config.plugins.unshift(
+  new webpack.LoaderOptionsPlugin({
+    options: {
+      eslint: {
+        emitWarning: true,
+        formatter: require('eslint-friendly-formatter')
+      }
     }
-  }
-}));
+  })
+);
 
 module.exports = config;

@@ -1,7 +1,7 @@
 {
   "name": "web-boilerplate",
   "version": "1.1.0",
-  "description": "A template for new front-end projects.",
+  "description": "A front end client for managing zombies.",
   "main": "index.js",
   "scripts": {
     "lint": "npm run lint:css ; npm run lint:js",
@@ -14,10 +14,6 @@
     "build:production": "NODE_ENV=production webpack --progress --colors",
     "start": "webpack-dev-server"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/brandonking7/web-boilerplate.git"
-  },
   "author": "Brandon King",
   "private": true,
   "license": "UNLICENSED",
@@ -29,16 +25,19 @@
     "axios": "^0.18.0",
     "compression-webpack-plugin": "^1.1.11",
     "extract-text-webpack-plugin": "^3.0.2",
+    "immutable": "^4.0.0-rc.12",
     "normalize.css": "^5.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
+    "react-beautiful-dnd": "^11.0.4",
     "react-dom": "^16.8.6",
     "react-redux": "^5.0.1",
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",
     "redux": "^3.6.0",
     "redux-thunk": "^2.1.0",
-    "sanitize.css": "^4.1.0"
+    "sanitize.css": "^4.1.0",
+    "snakecase-keys": "^1.1.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
