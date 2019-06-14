@@ -6,6 +6,6 @@ React / Redux UI based Web front-end Application for Zombie Manager
 
 ### Initializing the application
 
-- `git clone https://github.com/brandonking7/react-zombie-manager`
+- `git clone https://github.com/brandonking7/React-Zombie-Manager`
 - `npm install`
 - `npm run start`
