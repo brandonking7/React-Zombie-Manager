@@ -123,13 +123,7 @@ class QuarantineZones extends Component {
         [destination.droppableId]: destinationList
       };
       this.setState({ zonesArray });
-      this.updateZombieZone(
-        value.id,
-        destination.droppableId,
-        destinationList
-      ).then(() => {
-        this.props.actions.zombie.getZombies();
-      });
+      this.updateZombieZone(value.id, destination.droppableId, destinationList);
     }
   }
 
