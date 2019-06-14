@@ -2,26 +2,24 @@ import React from 'react';
 import QuarantineZonesContainer from '../containers/QuarantineZonesContainer';
 import ZombieLocatorContainer from '../containers/ZombieLocatorContainer';
 
+const appContainerStyle = {
+  display: 'flex',
+  margin: 'auto',
+  padding: '16px',
+  width: '100%'
+};
+
+const quarantineContainerStyle = {
+  alignItems: 'center',
+  display: 'flex',
+  flexDirection: 'column',
+  width: '70%'
+};
+
 function App() {
   return (
-    <div
-      style={{
-        display: 'flex',
-        height: '100%',
-        margin: 'auto',
-        padding: '16px',
-        width: '100%'
-      }}
-    >
-      <div
-        style={{
-          alignItems: 'center',
-          display: 'flex',
-          flexDirection: 'column',
-          margin: '0 auto',
-          width: '70%'
-        }}
-      >
+    <div style={appContainerStyle}>
+      <div style={quarantineContainerStyle}>
         <div
           className="c-zombie--title"
           style={{ textAlign: 'center', marginBottom: '16px', width: '100%' }}
