@@ -142,7 +142,11 @@ class QuarantineZones extends Component {
       zone,
       zoneList: list
     };
-    return this.props.actions.zombie.updateZombieZone(zombieID, zombieInfo);
+    return this.props.actions.zombie
+      .updateZombieZone(zombieID, zombieInfo)
+      .then(() => {
+        this.props.actions.zombie.getZombies();
+      });
   }
 
   render() {
